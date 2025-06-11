@@ -12,9 +12,12 @@
 - 📂 **Saved prompts tab** with preview + delete
 - 📌 **Minimal sidebar layout**, fully self-contained
 - 🛡 Built with **vanilla JavaScript**, **MUI-style layout**, **SVG icons**
-  
+
+## User Interface  
 
 ![Prompt Builder UI](https://github.com/user-attachments/assets/c15b67eb-bd09-4977-a333-7841b3287e0f)
+
+Prompt Builder is a Firefox sidebar extension. Simply install the extension.
 
 ---
 
