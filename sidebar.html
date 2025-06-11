@@ -1,33 +1,100 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Prompt Builder</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="https://unpkg.com/@material/web/all.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap">
-</head>
-<body>
-  <h1>Prompt Builder</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prompt Builder Sidebar</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="sidebar.js" type="module"></script>
+  </head>
+  <body>
+    <div id="notification" class="notification hidden"></div>
 
-  <form id="promptForm">
-    <md-outlined-text-field label="1. What do you want to do?" id="goal"></md-outlined-text-field>
-    <md-outlined-text-area label="2. Provide context" id="context"></md-outlined-text-area>
-    <md-outlined-text-field label="3. Format, tone, length?" id="details"></md-outlined-text-field>
-    <md-outlined-text-field label="4. Break down complex tasks" id="steps"></md-outlined-text-field>
-    <md-outlined-text-field label="5. Refine and improve" id="refine"></md-outlined-text-field>
+    <div class="tabs">
+      <button id="tab-builder" class="tab-button active">Prompt Builder</button>
+      <button id="tab-history" class="tab-button">Saved Prompts</button>
+    </div>
 
-    <md-filled-button id="generateBtn">Generate Prompt</md-filled-button>
-    <md-filled-button id="copyBtn">Copy</md-filled-button>
-    <md-filled-button id="shareBtn">Share</md-filled-button>
-    <md-filled-button id="saveBtn">Save for Later</md-filled-button>
-  </form>
+    <div id="tab-content-builder" class="tab-content active">
+      <h2>Prompt Builder</h2>
 
-  <div id="result" class="result-container"></div>
+      <form id="promptForm">
+        <label for="templateSelect">🎯 Choose a Template</label>
+        <select id="templateSelect"></select>
 
-  <h2>Saved Prompts</h2>
-  <ul id="savedList" class="saved-list"></ul>
+        <label for="goal">What do you want to do?</label>
+        <textarea
+          id="goal"
+          rows="2"
+          placeholder="e.g., Summarize an article"
+        ></textarea>
 
-  <script src="sidebar.js"></script>
-</body>
+        <label for="context">Provide context</label>
+        <textarea
+          id="context"
+          rows="2"
+          placeholder="e.g., Article on renewable energy trends in 2024"
+        ></textarea>
+
+        <label for="details">Format, tone, length?</label>
+        <textarea
+          id="details"
+          rows="2"
+          placeholder="e.g., Friendly tone, around 100 words"
+        ></textarea>
+
+        <label for="steps">Break down complex tasks</label>
+        <textarea
+          id="steps"
+          rows="2"
+          placeholder="e.g., Summarize in 3 bullets, then suggest 2 titles"
+        ></textarea>
+
+        <label for="refine">Refine and improve</label>
+        <textarea
+          id="refine"
+          rows="2"
+          placeholder="e.g., Try rewording to make it more concise"
+        ></textarea>
+        <div class="actions">
+          <button class="icon-button" aria-label="Generate" id="generateBtn">
+            <svg class="icon">
+              <use href="icons/symbols.svg#icon-generate"></use>
+            </svg>
+          </button>
+        </div>
+      </form>
+
+      <h2>Generated Prompt</h2>
+      <textarea
+        id="result"
+        class="result-container"
+        rows="8"
+        placeholder="Generated prompt will appear here. You can edit it."
+      ></textarea>
+      <div class="actions">
+        <button class="icon-button" aria-label="Copy" id="copyBtn">
+          <svg class="icon">
+            <use href="icons/symbols.svg#icon-copy"></use>
+          </svg>
+        </button>
+        <button class="icon-button" aria-label="Share" id="shareBtn">
+          <svg class="icon">
+            <use href="icons/symbols.svg#icon-share"></use>
+          </svg>
+        </button>
+        <button class="icon-button" aria-label="Save" id="saveBtn">
+          <svg class="icon">
+            <use href="icons/symbols.svg#icon-save"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="tab-content-history" class="tab-content hidden">
+      <h2>Saved Prompts</h2>
+      <ul id="savedList" class="saved-list"></ul>
+    </div>
+
+    <style></style>
+  </body>
 </html>

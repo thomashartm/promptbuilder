@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+          <symbol id="icon-generate" viewBox="0 0 24 24">
+            <path d="M12 2v20m10-10H2" stroke="currentColor" stroke-width="2" fill="none" />
+          </symbol>
+
+          <symbol id="icon-copy" viewBox="0 0 24 24">
+            <rect x="8" y="8" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none" />
+            <rect x="4" y="4" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+          </symbol>
+
+          <symbol id="icon-share" viewBox="0 0 24 24">
+            <path d="M4 12v8h16v-8M12 2v14m0-14l5 5m-5-5l-5 5" stroke="currentColor" stroke-width="2" fill="none" />
+          </symbol>
+
+          <symbol id="icon-save" viewBox="0 0 24 24">
+            <path d="M5 3h14l2 2v16H3V3h2zm7 13a2 2 0 100-4 2 2 0 000 4zm0-8v4" stroke="currentColor" stroke-width="2" fill="none"/>
+          </symbol>
+
+          <symbol id="icon-delete" viewBox="0 0 24 24">
+            <path d="M3 6h18M8 6v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V6m-6 0V4h4v2" stroke="currentColor" stroke-width="2" fill="none"/>
+          </symbol>
+        </svg>
