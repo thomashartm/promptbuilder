@@ -4,15 +4,12 @@
   <meta charset="UTF-8">
   <title>Prompt Builder</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Material Web Components (MDC) -->
   <script type="module" src="https://unpkg.com/@material/web/all.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
   <h1>Prompt Builder</h1>
-  
+
   <form id="promptForm">
     <md-outlined-text-field label="1. What do you want to do?" id="goal"></md-outlined-text-field>
     <md-outlined-text-area label="2. Provide context" id="context"></md-outlined-text-area>
@@ -21,15 +18,16 @@
     <md-outlined-text-field label="5. Refine and improve" id="refine"></md-outlined-text-field>
 
     <md-filled-button id="generateBtn">Generate Prompt</md-filled-button>
+    <md-filled-button id="copyBtn">Copy</md-filled-button>
+    <md-filled-button id="shareBtn">Share</md-filled-button>
+    <md-filled-button id="saveBtn">Save for Later</md-filled-button>
   </form>
 
   <div id="result" class="result-container"></div>
 
-  <div class="actions">
-    <md-filled-button id="copyBtn">Copy</md-filled-button>
-    <md-filled-button id="shareBtn">Share</md-filled-button>
-  </div>
+  <h2>Saved Prompts</h2>
+  <ul id="savedList" class="saved-list"></ul>
 
-  <script src="popup.js"></script>
+  <script src="sidebar.js"></script>
 </body>
 </html>
