@@ -1,11 +1,14 @@
 import { templates } from "./templates.js";
+import { templateCategories } from "./template-categories.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Elements
   const resultBox = document.getElementById("result");
   const savedList = document.getElementById("savedList");
 
-  // Tab events already wired in HTML
+  document.addEventListener("DOMContentLoaded", () => {
+    populateTemplates(); // show all by default
+  });
 
   // Notification function
   function showNotification(message) {
@@ -146,15 +149,47 @@ Refinement: ${refine}`;
     }
   });
 
+  const categorySelect = document.getElementById("categoryFilter");
   const templateSelect = document.getElementById("templateSelect");
 
-  for (const [key, template] of Object.entries(templates)) {
-    const option = document.createElement("option");
-    option.value = key;
-    option.textContent = template.label;
-    console.log(option);
-    templateSelect.appendChild(option);
+  function populateTemplates(selectedCategory = "") {
+    templateSelect.innerHTML = "";
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.textContent = "-- Select Template --";
+    templateSelect.appendChild(defaultOption);
+
+    for (const [key, template] of Object.entries(templates)) {
+      if (!selectedCategory || template.category === selectedCategory) {
+        const option = document.createElement("option");
+        option.value = key;
+        option.textContent = template.label;
+        templateSelect.appendChild(option);
+      }
+    }
   }
+
+  categorySelect.addEventListener("change", (e) => {
+    populateTemplates(e.target.value);
+  });
+
+  function populateCategorySelect() {
+    categorySelect.innerHTML = "";
+
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.textContent = "-- All --";
+    categorySelect.appendChild(defaultOption);
+
+    templateCategories.forEach((category) => {
+      const option = document.createElement("option");
+      option.value = category;
+      option.textContent = category;
+      categorySelect.appendChild(option);
+    });
+  }
+
+  populateCategorySelect();
 
   // Tab switching
   document.getElementById("tab-builder").addEventListener("click", () => {
