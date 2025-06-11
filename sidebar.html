@@ -15,8 +15,31 @@
     </div>
 
     <div id="tab-content-builder" class="tab-content active">
-      <h2>Prompt Builder</h2>
-
+      <div class="actions">
+        <button class="icon-button" aria-label="Copy" id="copyBtn">
+          <svg class="icon">
+            <use href="icons/symbols.svg#icon-copy"></use>
+          </svg>
+        </button>
+        <button class="icon-button" aria-label="Share" id="shareBtn">
+          <svg class="icon">
+            <use href="icons/symbols.svg#icon-share"></use>
+          </svg>
+        </button>
+        <button class="icon-button" aria-label="Save" id="saveBtn">
+          <svg class="icon">
+            <use href="icons/symbols.svg#icon-save"></use>
+          </svg>
+        </button>
+        <button
+          class="icon-button"
+          aria-label="Generate"
+          id="generateBtn"
+          style="margin-left: 10px"
+        >
+          Create
+        </button>
+      </div>
       <form id="promptForm">
         <label for="categoryFilter">Filter by Role/Category</label>
         <select id="categoryFilter"></select>
@@ -57,37 +80,14 @@
           rows="2"
           placeholder="e.g., Try rewording to make it more concise"
         ></textarea>
-        <div class="actions">
-          <button class="icon-button" aria-label="Generate" id="generateBtn">
-            Create
-          </button>
-        </div>
       </form>
-
-      <h2>Generated Prompt</h2>
+      <label for="refine">Refine your generated prompt:</label>
       <textarea
         id="result"
         class="result-container"
         rows="8"
         placeholder="Generated prompt will appear here. You can edit it."
       ></textarea>
-      <div class="actions">
-        <button class="icon-button" aria-label="Copy" id="copyBtn">
-          <svg class="icon">
-            <use href="icons/symbols.svg#icon-copy"></use>
-          </svg>
-        </button>
-        <button class="icon-button" aria-label="Share" id="shareBtn">
-          <svg class="icon">
-            <use href="icons/symbols.svg#icon-share"></use>
-          </svg>
-        </button>
-        <button class="icon-button" aria-label="Save" id="saveBtn">
-          <svg class="icon">
-            <use href="icons/symbols.svg#icon-save"></use>
-          </svg>
-        </button>
-      </div>
     </div>
 
     <div id="tab-content-history" class="tab-content hidden">

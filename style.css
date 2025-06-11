@@ -181,6 +181,18 @@ button:hover {
   display: block;
 }
 
+.export-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.export-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
 .export-controls button:hover {
   background-color: #e0e0e0;
 }

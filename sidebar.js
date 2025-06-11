@@ -30,13 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const steps = document.getElementById("steps").value.trim();
     const refine = document.getElementById("refine").value.trim();
 
-    const prompt = `Task: ${goal}
-Context: ${context}
-Details: ${details}
-Steps: ${steps}
-Refinement: ${refine}`;
+    if (!goal && !context && !details && !steps && !refine) {
+      showNotification("⚠️ No content to generate a prompt.");
+      return;
+    }
 
-    resultBox.value = prompt;
+    let prompt = "";
+
+    if (goal) prompt += `🎯 Goal:\n${goal}\n\n`;
+    if (context) prompt += `📄 Context:\n${context}\n\n`;
+    if (details) prompt += `🛠️ Details:\n${details}\n\n`;
+    if (steps) prompt += `🧩 Steps:\n${steps}\n\n`;
+    if (refine) prompt += `🪄 Refine:\n${refine}\n`;
+
+    document.getElementById("result").value = prompt.trim();
     showNotification("✅ Prompt generated!");
   });
 
