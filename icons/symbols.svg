@@ -20,4 +20,16 @@
           <symbol id="icon-delete" viewBox="0 0 24 24">
             <path d="M3 6h18M8 6v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V6m-6 0V4h4v2" stroke="currentColor" stroke-width="2" fill="none"/>
           </symbol>
+
+          <symbol id="icon-copy" viewBox="0 0 24 24">
+            <path d="M9 9h11v11H9zM5 5h11v2H7v10H5z" fill="currentColor"/>
+          </symbol>
+
+          <symbol id="icon-export-json" viewBox="0 0 24 24">
+            <path d="M5 5h14v2H5zM5 9h10v2H5zM5 13h14v2H5zM5 17h10v2H5z" fill="currentColor"/>
+          </symbol>
+
+          <symbol id="icon-export-txt" viewBox="0 0 24 24">
+            <path d="M5 5h14v2H5zM5 9h14v2H5zM5 13h8v2H5zM5 17h14v2H5z" fill="currentColor"/>
+          </symbol>
         </svg>

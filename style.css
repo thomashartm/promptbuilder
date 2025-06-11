@@ -129,21 +129,21 @@ button:hover {
   text-overflow: ellipsis;
 }
 
-.delete-icon {
+.list-icon {
   background: grey;
   border: none;
-  margin-left: auto;
+  margin-left: 2px;
   padding: 0;
   cursor: pointer;
 }
 
-.delete-icon .icon {
-  width: 18px;
-  height: 18px;
+.list-icon .icon {
+  width: 16px;
+  height: 16px;
   fill: #888;
 }
 
-.delete-icon:hover .icon {
+.list-icon:hover .icon {
   fill: #d32f2f;
 }
 
@@ -176,6 +176,11 @@ button:hover {
   display: none;
   margin-left: 4px;
 }
+
 .tab-content.active {
   display: block;
+}
+
+.export-controls button:hover {
+  background-color: #e0e0e0;
 }

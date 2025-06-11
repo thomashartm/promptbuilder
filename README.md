@@ -74,7 +74,7 @@ This extension stores:
 - [ ] GitHub login to save prompts as Gists
 - [ ] Custom categories/tags for saved prompts
 - [ ] Pre defined prompts for different audiences
-- [ ] Import/export prompt history
+- [x] Import/export saved prompt history
 - [ ] Optional sync between devices
 
 ---

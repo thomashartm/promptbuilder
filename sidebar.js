@@ -111,8 +111,25 @@ Refinement: ${refine}`;
         document.getElementById("tab-builder").click(); // switch tab
       });
 
+      const copyBtn = document.createElement("button");
+      copyBtn.className = "list-icon";
+      copyBtn.innerHTML = `
+        <svg class="icon"><use href="icons/symbols.svg#icon-copy" /></svg>
+      `;
+      copyBtn.title = "Copy prompt";
+      copyBtn.addEventListener("click", async (e) => {
+        e.stopPropagation();
+        try {
+          await navigator.clipboard.writeText(text);
+          showNotification("📋 Prompt copied to clipboard!");
+        } catch (err) {
+          console.error("Clipboard error:", err);
+          showNotification("❌ Failed to copy.");
+        }
+      });
+
       const del = document.createElement("button");
-      del.className = "delete-icon";
+      del.className = "list-icon";
       del.innerHTML = `
         <svg class="icon">
           <use href="icons/symbols.svg#icon-delete"></use>
@@ -128,6 +145,7 @@ Refinement: ${refine}`;
       });
 
       li.appendChild(span);
+      li.appendChild(copyBtn);
       li.appendChild(del);
       savedList.appendChild(li);
     });
@@ -190,6 +208,36 @@ Refinement: ${refine}`;
   }
 
   populateCategorySelect();
+
+  function download(content, filename, type) {
+    const blob = new Blob([content], { type });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    a.click();
+
+    URL.revokeObjectURL(url);
+  }
+
+  document
+    .getElementById("exportJsonBtn")
+    .addEventListener("click", async () => {
+      const { prompts = [] } = await browser.storage.local.get("prompts");
+      download(
+        JSON.stringify(prompts, null, 2),
+        "saved-prompts.json",
+        "application/json",
+      );
+    });
+
+  document
+    .getElementById("exportTxtBtn")
+    .addEventListener("click", async () => {
+      const { prompts = [] } = await browser.storage.local.get("prompts");
+      download(prompts.join("\n\n---\n\n"), "saved-prompts.txt", "text/plain");
+    });
 
   // Tab switching
   document.getElementById("tab-builder").addEventListener("click", () => {
