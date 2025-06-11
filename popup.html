@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Prompt Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Prompt Builder</h1>
+  <form id="promptForm">
+    <label>1. What do you want to do?</label>
+    <input type="text" id="goal" placeholder="e.g. Summarize an article">
+
+    <label>2. Provide context</label>
+    <textarea id="context" placeholder="Paste relevant info here"></textarea>
+
+    <label>3. Format, tone, length?</label>
+    <input type="text" id="details" placeholder="e.g. Friendly tone, 100 words">
+
+    <label>4. Break down complex tasks</label>
+    <input type="text" id="steps" placeholder="Optional steps">
+
+    <label>5. Refine and improve</label>
+    <input type="text" id="refine" placeholder="How to iterate?">
+
+    <button type="submit">Generate Prompt</button>
+  </form>
+
+  <div id="result"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
