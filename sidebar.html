@@ -15,31 +15,6 @@
     </div>
 
     <div id="tab-content-builder" class="tab-content active">
-      <div class="actions">
-        <button class="icon-button" aria-label="Copy" id="copyBtn">
-          <svg class="icon">
-            <use href="icons/symbols.svg#icon-copy"></use>
-          </svg>
-        </button>
-        <button class="icon-button" aria-label="Share" id="shareBtn">
-          <svg class="icon">
-            <use href="icons/symbols.svg#icon-share"></use>
-          </svg>
-        </button>
-        <button class="icon-button" aria-label="Save" id="saveBtn">
-          <svg class="icon">
-            <use href="icons/symbols.svg#icon-save"></use>
-          </svg>
-        </button>
-        <button
-          class="icon-button"
-          aria-label="Generate"
-          id="generateBtn"
-          style="margin-left: 10px"
-        >
-          Create
-        </button>
-      </div>
       <form id="promptForm">
         <label for="categoryFilter">Filter by Role/Category</label>
         <select id="categoryFilter"></select>
@@ -82,6 +57,24 @@
         ></textarea>
       </form>
       <label for="refine">Refine your generated prompt:</label>
+
+      <div class="prompt-toolbar">
+        <button id="generateBtn" title="Generate Prompt">
+            <svg class="icon"><use href="#icon-generate" /></svg>
+
+        </button>
+        <button id="copyBtn" title="Copy Prompt">
+            <svg class="icon"><use href="#icon-copy" /></svg>
+        </button>
+        <button id="shareBtn" title="Share Prompt">
+            <svg class="icon"><use href="#icon-share" /></svg>
+
+        </button>
+        <button id="saveBtn" title="Save Prompt">
+            <svg class="icon"><use href="#icon-save" /></svg>
+
+        </button>
+      </div>
       <textarea
         id="result"
         class="result-container"
@@ -114,5 +107,31 @@
     </div>
 
     <style></style>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="icon-copy" viewBox="0 0 24 24">
+        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0
+                 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+      </symbol>
+
+      <symbol id="icon-save" viewBox="0 0 24 24">
+        <path d="M17 3H5c-1.1 0-2 .9-2 2v14a2 2 0 002 2h14a2 2 0 002-2V7l-4-4zm0
+                 16H7v-6h10v6zm-5-7a2 2 0 110-4 2 2 0 010 4zm3-7.5V9H6V5.5h9z" />
+      </symbol>
+
+      <symbol id="icon-share" viewBox="0 0 24 24">
+        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.14 3.14 0 000-1.4l7.05-4.11A2.97
+                 2.97 0 0018 7.91c1.66 0 3-1.34 3-3S19.66 2 18 2s-3 1.34-3 3c0
+                 .23.03.45.08.66L8.03 9.77a3 3 0 100 4.46l7.05 4.11c-.05.21-.08.43-.08.66 0
+                 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z" />
+      </symbol>
+
+      <symbol id="icon-generate" viewBox="0 0 24 24">
+        <path d="M12 2l4 8H8l4-8zm0 20l-4-8h8l-4 8z" />
+      </symbol>
+
+      <symbol id="icon-export-json" viewBox="0 0 24 24">
+        <path d="M5 5h14v2H5zM5 9h10v2H5zM5 13h14v2H5zM5 17h10v2H5z" />
+      </symbol>
+
   </body>
 </html>

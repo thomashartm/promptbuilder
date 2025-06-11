@@ -20,17 +20,17 @@ form {
 }
 
 label {
-  font-weight: bold;
-  margin-top: 10px;
+  font-weight: normal;
+  margin-top: 8px;
 }
 
 textarea,
 input {
   width: 100%;
-  padding: 6px 8px;
+  padding: 4px 8px;
   border: 1px solid #ccc;
   border-radius: 0px;
-  font-size: 14px;
+  font-size: 12px;
   box-sizing: border-box;
   resize: vertical;
 }
@@ -47,7 +47,7 @@ textarea {
 }
 
 button {
-  background-color: #1976d2;
+  background-color: grey;
   color: white;
   border: none;
   border-radius: 0px;
@@ -58,6 +58,45 @@ button {
 
 button:hover {
   background-color: #1565c0;
+}
+
+.prompt-toolbar {
+  display: flex;
+  gap: 8px;
+  padding: 4px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 6px 6px 0 0;
+  border-bottom: none;
+  justify-content: flex-start;
+}
+
+.prompt-toolbar button svg {
+  width: 20px;
+  height: 20px;
+  fill: #333 !important;
+  color: #333 !important;
+  display: block;
+}
+
+.prompt-toolbar button:hover {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+.prompt-toolbar button svg {
+  fill: currentColor;
+  color: #333;
+}
+
+#result {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 8px;
+  font-family: monospace;
+  resize: vertical;
 }
 
 .result-container {
@@ -105,9 +144,11 @@ button:hover {
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
+  width: 20px;
+  height: 20px;
+  fill: #333 !important;
+  color: #333 !important;
+  display: block;
 }
 
 .saved-list li {
@@ -158,18 +199,21 @@ button:hover {
 
 .tabs {
   display: flex;
-  gap: 5px;
+  gap: 0px;
   margin-bottom: 10px;
 }
 .tab-button {
   flex: 1;
   padding: 6px;
-  background: #eee;
+  background: #cccccc;
   border: none;
   cursor: pointer;
 }
+.tab-button:hover {
+  background: slategrey;
+}
 .tab-button.active {
-  background: #ccc;
+  background: grey;
   font-weight: bold;
 }
 .tab-content {
