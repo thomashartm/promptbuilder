@@ -2,8 +2,6 @@
 
 **Prompt Builder** is a Firefox browser extension that helps users craft, customize, and manage prompts for LLMs like ChatGPT, Claude, or Gemini — faster and smarter.
 
----
-
 ## ✨ Features
 
 - 🛠 **Simple Prompt-building UI** with structured inputs
@@ -14,6 +12,9 @@
 - 📂 **Saved prompts tab** with preview + delete
 - 📌 **Minimal sidebar layout**, fully self-contained
 - 🛡 Built with **vanilla JavaScript**, **MUI-style layout**, **SVG icons**
+  
+
+![Prompt Builder UI](https://github.com/user-attachments/assets/c15b67eb-bd09-4977-a333-7841b3287e0f)
 
 ---
 
