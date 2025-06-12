@@ -1,4 +1,4 @@
-name: Build and Release PromptBuilder Extension
+name: Build and Release
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-release:
-    name: Build & Release PromptBuilder Extension
+    name: Build & Release Extension
     runs-on: ubuntu-latest
 
     steps:
