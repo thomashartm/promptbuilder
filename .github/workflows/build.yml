@@ -1,0 +1,31 @@
+name: Build and Release PromptBuilder Extension
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-and-release:
+    name: Build & Release PromptBuilder Extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create ZIP Package
+        run: |
+          mkdir -p dist
+          zip -r dist/promptbuilder-extension.zip . -x '*.git*' -x 'dist/*'
+
+      - name: Upload ZIP as GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/promptbuilder-extension.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: (Optional) Verify ZIP manifest.json exists
+        run: unzip -l dist/promptbuilder-extension.zip | grep manifest.json
