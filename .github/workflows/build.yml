@@ -25,7 +25,7 @@ jobs:
         with:
           files: dist/promptbuilder-extension.zip
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GHA_PAT }}
 
       - name: (Optional) Verify ZIP manifest.json exists
         run: unzip -l dist/promptbuilder-extension.zip | grep manifest.json
