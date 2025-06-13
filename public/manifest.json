@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Prompt Builder",
+  "version": "1.0",
+  "description": "Helps you to quickly craft effective LLM prompts from within your browser.",
+  "sidebar_action": {
+    "default_title": "Prompt Builder",
+    "default_panel": "index.html"
+  },
+  "permissions": ["storage"],
+  "icons": {
+    "48": "icons/icon.png"
+  }
+}

@@ -22,7 +22,7 @@
           </symbol>
 
           <symbol id="icon-copy" viewBox="0 0 24 24">
-            <path d="M9 9h11v11H9zM5 5h11v2H7v10H5z" fill="currentColor"/>
+            <path d="M9 9h11v11H9zM5 5h11v2H7v10H5z" fill="currentColor" fill="currentColor"/>
           </symbol>
 
           <symbol id="icon-export-json" viewBox="0 0 24 24">
