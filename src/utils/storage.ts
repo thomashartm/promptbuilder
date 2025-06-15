@@ -1,6 +1,8 @@
+import {PromptRecord} from "@/types";
+
 export interface SavedPrompt {
   id: string;
-  text: string;
+  prompt: PromptRecord;
 }
 
 const STORAGE_KEY = 'saved_prompts';
@@ -10,9 +12,9 @@ export async function loadPrompts(): Promise<SavedPrompt[]> {
   return result[STORAGE_KEY] ?? [];
 }
 
-export async function savePrompt(text: string) {
+export async function savePrompt(prompt: PromptRecord) {
   const prompts = await loadPrompts();
-  prompts.push({ id: Date.now().toString(), text });
+  prompts.push({ id: Date.now().toString(), prompt });
   await browser.storage.local.set({ [STORAGE_KEY]: prompts });
 }
 
@@ -23,10 +25,10 @@ export async function deletePrompt(id: string) {
   });
 }
 
-export async function updatePrompt(id: string, text: string) {
+export async function updatePrompt(id: string, prompt: PromptRecord) {
   const prompts = await loadPrompts();
   await browser.storage.local.set({
-    [STORAGE_KEY]: prompts.map(p => (p.id === id ? { ...p, text } : p)),
+    [STORAGE_KEY]: prompts.map(p => (p.id === id ? { ...p, prompt } : p)),
   });
 }
 

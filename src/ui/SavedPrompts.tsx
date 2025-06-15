@@ -7,6 +7,8 @@ import {
   reorderPrompts,
   SavedPrompt,
 } from "@/utils/storage";
+import {downloadContent} from "@/utils/actions.ts";
+import {PromptRecord} from "@/types";
 
 export default function SavedPrompts() {
   const [prompts, setPrompts] = useState<SavedPrompt[]>([]);
@@ -20,8 +22,8 @@ export default function SavedPrompts() {
     setPrompts(await loadPrompts());
   };
 
-  const update = async (id: string, text: string) => {
-    await updatePrompt(id, text);
+  const update = async (id: string, prompt: PromptRecord) => {
+    await updatePrompt(id, prompt);
     setPrompts(await loadPrompts());
   };
 
@@ -38,16 +40,19 @@ export default function SavedPrompts() {
         {prompts.map((p, idx) => (
           <li key={idx}>
             <div className="flex">
-              <div className="flex w-3/5">{p.text}</div>
+              <div className="flex w-3/5">{p.id}: {p.prompt?.text}</div>
               <div className="flex w-2/5">
                 <button
                   className="border px-2"
-                  onClick={() => navigator.clipboard.writeText(p.text)}
+                  onClick={() => navigator.clipboard.writeText(p.prompt.text)}
                 >
                   Copy
                 </button>
                 <button className="border px-2" onClick={() => remove(p.id)}>
                   Delete
+                </button>
+                <button className="border px-2" onClick={() => downloadContent(p.prompt.text, `${p.id}.txt`, 'text/plain')}>
+                  Download
                 </button>
               </div>
             </div>

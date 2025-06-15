@@ -1,6 +1,7 @@
 export interface FrameworkParameter {
   name: string;
   description: string;
+  rowSize?: number;
   optional?: boolean;
 }
 
@@ -77,8 +78,8 @@ export const FRAMEWORKS: Framework[] = [
     parameters: [
       { name: 'role', description: 'AI persona or role' },
       { name: 'input', description: 'Context and instructions' },
-      { name: 'steps', description: 'Ask for step-by-step output' },
-      { name: 'execution', description: 'Describe the expected outcome' },
+      { name: 'steps', description: 'Ask for step-by-step output', rowSize: 3 },
+      { name: 'execution', description: 'Describe the expected outcome', rowSize: 4 },
     ],
   },
   {
@@ -88,7 +89,7 @@ export const FRAMEWORKS: Framework[] = [
       { name: 'problem', description: 'Problem definition or challenge' },
       { name: 'action', description: 'Action to address the problem' },
       { name: 'information', description: 'Details or data needed' },
-      { name: 'nextSteps', description: 'Resources or follow-up actions' },
+      { name: 'nextSteps', description: 'Resources or follow-up actions', rowSize: 3 },
     ],
   },
   {
@@ -97,8 +98,8 @@ export const FRAMEWORKS: Framework[] = [
     parameters: [
       { name: 'context', description: 'Background information' },
       { name: 'objective', description: 'Overall goal or aim' },
-      { name: 'actions', description: 'Detailed actions required' },
-      { name: 'scenario', description: 'Specific situation or problem' },
+      { name: 'actions', description: 'Detailed actions required', rowSize: 5 },
+      { name: 'scenario', description: 'Specific situation or problem', rowSize: 5 },
       { name: 'task', description: 'Primary task to be performed' },
     ],
   },
@@ -108,9 +109,9 @@ export const FRAMEWORKS: Framework[] = [
     parameters: [
       { name: 'role', description: 'AI persona or role' },
       { name: 'objective', description: 'Desired result' },
-      { name: 'scenario', description: 'Context or background information' },
-      { name: 'expectedSolution', description: 'Describe the outcome or solution' },
-      { name: 'steps', description: 'Step-by-step instructions or breakdown' },
+      { name: 'scenario', description: 'Context or background information', rowSize: 3 },
+      { name: 'expectedSolution', description: 'Describe the outcome or solution' , rowSize: 3},
+      { name: 'steps', description: 'Step-by-step instructions or breakdown', rowSize: 5 },
     ],
   },
 ];
