@@ -1,0 +1,21 @@
+{
+  "name": "promptbuilder",
+  "version": "1.0.0",
+  "description": "Prompt Builder browser extension",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt dev",
+    "build": "wxt build"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "typescript": "^5.8.3",
+    "wxt": "^0.20.7"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "shadcn-ui": "^0.9.5"
+  }
+}
