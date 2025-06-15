@@ -1,10 +1,11 @@
-import { defineConfig } from 'wxt';
+import { defineConfig } from "wxt";
 
+// See https://wxt.dev/api/config.html
 export default defineConfig({
-  srcDir: 'src',
-  manifestVersion: 3,
-  browser: 'chrome',
-  targetBrowsers: ['chrome', 'firefox'],
-  outDir: 'dist',
-  entrypointsDir: 'entrypoints',
+  srcDir: "src",
+  modules: ["@wxt-dev/module-react"],
+  manifest: {
+    permissions: ["storage", "sidePanel"],
+    action: {},
+  },
 });

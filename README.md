@@ -1,6 +1,6 @@
-# 🧠 Prompt Builder – Firefox Extension
+# 🧠 Prompt Builder – Browser Extension
 
-**Prompt Builder** is a Firefox browser extension that helps users craft, customize, and manage prompts for LLMs like ChatGPT, Claude, or Gemini — faster and smarter.
+**Prompt Builder** is a Chrome/Firefox browser web extension that helps users craft, customize, and manage prompts for LLMs like ChatGPT, Claude, or Gemini — faster and smarter.
 
 ## Why?
 Because building prompts is quite a repetitive process and often times I am basically solving similar problems.
@@ -18,13 +18,13 @@ That's where prompt builder comes in.
 - 📅 **Persistent storage** of recent prompts (in browser)
 - 📂 **Saved prompts tab** with preview + delete
 - 📌 **Minimal sidebar layout**, fully self-contained
-- 🛡 Built with **vanilla JavaScript**, **MUI-style layout**, **SVG icons**
+- 🛡 Built with **React.js, Typescript**, **ShadCDNui-style layout**, **SVG icons**
 
 ## How to work with it?
 
 ![Prompt Builder UI](https://github.com/user-attachments/assets/c15b67eb-bd09-4977-a333-7841b3287e0f)
 
-Prompt Builder is a Firefox sidebar extension. 
+Prompt Builder is a Firefox sidebar extension.
 1. Simply install the extension
 2. Craft your prompt and/or use one of the provided templates.
 3. (Optional) Save the prompt.
@@ -76,11 +76,11 @@ This extension stores:
 
 ## 🔧 Tech Stack
 
-- Vanilla JS
+- wxt - WebExtension Framework
+- React JS
 - WebExtension APIs (`browser.storage.local`)
-- Firefox sidebar UI
 - SVG icons via `<symbol>` sprite
-- Local-only, no dependencies or frameworks
+- Local-only
 
 ---
 
@@ -89,7 +89,7 @@ This extension stores:
 - [ ] GitHub login to save prompts as Gists
 - [ ] Custom categories/tags for saved prompts
 - [ ] Pre defined prompts for different audiences
-- [x] Import/export saved prompt history
+- [x] Export saved prompt history to JSON or TXT
 - [ ] Optional sync between devices
 
 ---

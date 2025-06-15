@@ -1,13 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "jsx": "react-jsx",
-    "strict": true,
-    "allowJs": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
+    "jsx": "react-jsx",
+    /* Type Checking */
+    "strict": true,
+    "lib": ["DOM", "WebWorker", "ESNext"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    /* Completeness */
     "skipLibCheck": true
-  },
-  "include": ["src"]
+  }
 }

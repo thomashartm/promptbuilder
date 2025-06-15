@@ -1,5 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { loadPrompts, deletePrompt, updatePrompt, reorderPrompts, SavedPrompt } from '../utils/storage';
+import React, { useEffect, useState } from "react";
+import {
+  savePrompt,
+  loadPrompts,
+  deletePrompt,
+  updatePrompt,
+  reorderPrompts,
+  SavedPrompt,
+} from "@/utils/storage";
 
 export default function SavedPrompts() {
   const [prompts, setPrompts] = useState<SavedPrompt[]>([]);
@@ -27,21 +34,26 @@ export default function SavedPrompts() {
 
   return (
     <div className="space-y-2">
-      {prompts.map((p, idx) => (
-        <div key={p.id} className="border p-2 space-y-1">
-          <textarea
-            className="border p-1 w-full"
-            value={p.text}
-            onChange={e => update(p.id, e.target.value)}
-          />
-          <div className="flex space-x-2">
-            <button className="border px-2" onClick={() => navigator.clipboard.writeText(p.text)}>Copy</button>
-            <button className="border px-2" onClick={() => remove(p.id)}>Delete</button>
-            {idx > 0 && <button className="border px-2" onClick={() => move(idx, idx - 1)}>Up</button>}
-            {idx < prompts.length - 1 && <button className="border px-2" onClick={() => move(idx, idx + 1)}>Down</button>}
-          </div>
-        </div>
-      ))}
+      <ul id="savedList" className="saved-list">
+        {prompts.map((p, idx) => (
+          <li key={idx}>
+            <div className="flex">
+              <div className="flex w-3/5">{p.text}</div>
+              <div className="flex w-2/5">
+                <button
+                  className="border px-2"
+                  onClick={() => navigator.clipboard.writeText(p.text)}
+                >
+                  Copy
+                </button>
+                <button className="border px-2" onClick={() => remove(p.id)}>
+                  Delete
+                </button>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
