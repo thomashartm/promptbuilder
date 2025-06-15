@@ -4,7 +4,9 @@
   "description": "Prompt Builder browser extension",
   "type": "module",
   "scripts": {
-    "dev": "wxt dev",
+    "dev": "wxt dev .",
+    "dev:chrome": "wxt dev . -b chrome",
+    "dev:firefox": "wxt dev . -b firefox",
     "build": "wxt build"
   },
   "devDependencies": {
