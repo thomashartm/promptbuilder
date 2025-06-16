@@ -24,7 +24,7 @@ That's where prompt builder comes in.
 
 ![Prompt Builder UI](https://github.com/user-attachments/assets/eab9a14d-0571-4e0d-baba-1bb9f5eab7cf)
 
-Prompt Builder is a Firefox sidebar extension.
+Prompt Builder is a Chrome/Firefox sidebar extension.
 1. Simply install the extension
 2. Craft your prompt and/or use one of the provided templates.
 3. (Optional) Save the prompt.
@@ -40,28 +40,23 @@ Prompt Builder is a Firefox sidebar extension.
    cd prompt-builder-extension
    ```
 
-2. Open Firefox:
+2.1 Chrome
+   ```bash
+   npm run dev:chrome
+   ```
+   - Open a new tab in the browser that pops up
+   - Enable the extension
+   - Use the web-extension settings and developer mode to debug the extension
+
+2.2 Firefox:
+   - wxt dev mode for FF is not supported ye
+   - Open Firefox:
    - Go to `about:debugging`
    - Click **"This Firefox"**
    - Click **"Load Temporary Add-on"**
    - Select `manifest.json` from the project directory
 
 3. The extension will appear as a sidebar icon in the browser.
-
----
-
-## 🗂 Project Structure
-
-```
-prompt-builder-extension/
-├── icons/                  # Inline SVG sprite used by buttons
-├── templates.js            # All reusable prompt templates
-├── sidebar.html            # Main UI (loaded into Firefox sidebar)
-├── sidebar.js              # JS logic (prompt generation, actions, storage)
-├── style.css               # Local styles (no external CSS used)
-├── manifest.json           # Firefox WebExtension manifest
-└── README.md
-```
 
 ---
 
