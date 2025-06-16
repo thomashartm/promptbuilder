@@ -22,7 +22,7 @@ That's where prompt builder comes in.
 
 ## How to work with it?
 
-![Prompt Builder UI](https://github.com/user-attachments/assets/c15b67eb-bd09-4977-a333-7841b3287e0f)
+![Prompt Builder UI](https://github.com/user-attachments/assets/eab9a14d-0571-4e0d-baba-1bb9f5eab7cf)
 
 Prompt Builder is a Firefox sidebar extension.
 1. Simply install the extension
